@@ -1,0 +1,277 @@
+export const carList = [
+  {
+    name: "BMW i4",
+    series: "i4",
+    colors: [
+      {
+        name: "Aventurine Red metallic",
+        path: "/i-series/i4/Aventurine Red metallic.png",
+        hex: "#1A1A1A",
+        border: "#0A0A0A",
+      },
+      {
+        name: "Black Sapphire",
+        path: "/i-series/i4/Black Sapphire.png",
+        hex: "#000000",
+        border: "#1A1A1A",
+      },
+      {
+        name: "Mineral White",
+        path: "/i-series/i4/Mineral White.png",
+        hex: "#FFFFFF",
+        border: "#E0E0E0",
+      },
+      {
+        name: "Sanremo Green",
+        path: "/i-series/i4/Sanremo Green.png",
+        hex: "#2D5C4E",
+        border: "#1A3A2E",
+      },
+    ],
+  },
+  {
+    name: "BMW i5 Sedan",
+    series: "i5-sedan",
+    colors: [
+      {
+        name: "P0416",
+        path: "/i-series/i5-sedan/P0416.png",
+        hex: "#1A1A1A",
+        border: "#0A0A0A",
+      },
+      {
+        name: "P0475",
+        path: "/i-series/i5-sedan/P0475.png",
+        hex: "#2C3E50",
+        border: "#1A252F",
+      },
+      {
+        name: "P0A90",
+        path: "/i-series/i5-sedan/P0A90.png",
+        hex: "#8B9DC3",
+        border: "#6B7DA3",
+      },
+      {
+        name: "P0A96",
+        path: "/i-series/i5-sedan/P0A96.png",
+        hex: "#4A5568",
+        border: "#2D3748",
+      },
+      {
+        name: "P0C1M",
+        path: "/i-series/i5-sedan/P0C1M.png",
+        hex: "#7C3AED",
+        border: "#5B21B6",
+      },
+      {
+        name: "P0C4A",
+        path: "/i-series/i5-sedan/P0C4A.png",
+        hex: "#A78BFA",
+        border: "#8B5CF6",
+      },
+      {
+        name: "P0C4P",
+        path: "/i-series/i5-sedan/P0C4P.png",
+        hex: "#EC4899",
+        border: "#DB2777",
+      },
+      {
+        name: "P0C5Y",
+        path: "/i-series/i5-sedan/P0C5Y.png",
+        hex: "#F59E0B",
+        border: "#D97706",
+      },
+    ],
+  },
+  {
+    name: "BMW i5 Touring",
+    series: "i5-touring",
+    colors: [
+      {
+        name: "P0416",
+        path: "/i-series/i5-touring/P0416.png",
+        hex: "#1A1A1A",
+        border: "#0A0A0A",
+      },
+      {
+        name: "P0475",
+        path: "/i-series/i5-touring/P0475.png",
+        hex: "#2C3E50",
+        border: "#1A252F",
+      },
+      {
+        name: "P0A90",
+        path: "/i-series/i5-touring/P0A90.png",
+        hex: "#8B9DC3",
+        border: "#6B7DA3",
+      },
+      {
+        name: "P0A96",
+        path: "/i-series/i5-touring/P0A96.png",
+        hex: "#4A5568",
+        border: "#2D3748",
+      },
+      {
+        name: "P0C4A",
+        path: "/i-series/i5-touring/P0C4A.png",
+        hex: "#A78BFA",
+        border: "#8B5CF6",
+      },
+      {
+        name: "P0C4P",
+        path: "/i-series/i5-touring/P0C4P.png",
+        hex: "#EC4899",
+        border: "#DB2777",
+      },
+      {
+        name: "P0C5Y",
+        path: "/i-series/i5-touring/P0C5Y.png",
+        hex: "#F59E0B",
+        border: "#D97706",
+      },
+    ],
+  },
+  {
+    name: "BMW i7",
+    series: "i7",
+    colors: [
+      {
+        name: "P0416",
+        path: "/i-series/i7/P0416.png",
+        hex: "#1A1A1A",
+        border: "#0A0A0A",
+      },
+      {
+        name: "P0475",
+        path: "/i-series/i7/P0475.png",
+        hex: "#2C3E50",
+        border: "#1A252F",
+      },
+      {
+        name: "P0A90",
+        path: "/i-series/i7/P0A90.png",
+        hex: "#8B9DC3",
+        border: "#6B7DA3",
+      },
+      {
+        name: "P0A96",
+        path: "/i-series/i7/P0A96.png",
+        hex: "#4A5568",
+        border: "#2D3748",
+      },
+      {
+        name: "P0C1M",
+        path: "/i-series/i7/P0C1M.png",
+        hex: "#7C3AED",
+        border: "#5B21B6",
+      },
+      {
+        name: "P0C4A (1)",
+        path: "/i-series/i7/P0C4A (1).png",
+        hex: "#A78BFA",
+        border: "#8B5CF6",
+      },
+      {
+        name: "P0C4P",
+        path: "/i-series/i7/P0C4P.png",
+        hex: "#EC4899",
+        border: "#DB2777",
+      },
+      {
+        name: "P0C5Y",
+        path: "/i-series/i7/P0C5Y.png",
+        hex: "#F59E0B",
+        border: "#D97706",
+      },
+    ],
+  },
+  {
+    name: "BMW iX",
+    series: "ix",
+    colors: [
+      {
+        name: "P0300",
+        path: "/ix-series/ix/P0300.png",
+        hex: "#FFFFFF",
+        border: "#E0E0E0",
+      },
+      {
+        name: "P0475",
+        path: "/ix-series/ix/P0475.png",
+        hex: "#2C3E50",
+        border: "#1A252F",
+      },
+      {
+        name: "P0A96",
+        path: "/ix-series/ix/P0A96.png",
+        hex: "#4A5568",
+        border: "#2D3748",
+      },
+      {
+        name: "P0C4F",
+        path: "/ix-series/ix/P0C4F.png",
+        hex: "#10B981",
+        border: "#059669",
+      },
+      {
+        name: "P0C57",
+        path: "/ix-series/ix/P0C57.png",
+        hex: "#3B82F6",
+        border: "#2563EB",
+      },
+      {
+        name: "P0C7A",
+        path: "/ix-series/ix/P0C7A.png",
+        hex: "#EF4444",
+        border: "#DC2626",
+      },
+    ],
+  },
+  {
+    name: "BMW iX1",
+    series: "ix1",
+    colors: [
+      {
+        name: "P0300",
+        path: "/ix-series/ix1/P0300.png",
+        hex: "#FFFFFF",
+        border: "#E0E0E0",
+      },
+      {
+        name: "P0475",
+        path: "/ix-series/ix1/P0475.png",
+        hex: "#2C3E50",
+        border: "#1A252F",
+      },
+      {
+        name: "P0A96",
+        path: "/ix-series/ix1/P0A96.png",
+        hex: "#4A5568",
+        border: "#2D3748",
+      },
+      {
+        name: "P0C31",
+        path: "/ix-series/ix1/P0C31.png",
+        hex: "#06B6D4",
+        border: "#0891B2",
+      },
+      {
+        name: "P0C5Y",
+        path: "/ix-series/ix1/P0C5Y.png",
+        hex: "#F59E0B",
+        border: "#D97706",
+      },
+      {
+        name: "P0C67",
+        path: "/ix-series/ix1/P0C67.png",
+        hex: "#14B8A6",
+        border: "#0D9488",
+      },
+    ],
+  },
+  {
+    name: "BMW iX3",
+    series: "ix3",
+    colors: [],
+  },
+];
