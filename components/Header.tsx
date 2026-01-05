@@ -50,7 +50,7 @@ export default function Header() {
         isScrolled ? "py-2" : "py-3"
       )}
     >
-      <div className="container flex items-center px-6 gap-24">
+      <div className="container flex items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4">
           <Image src="/logo.png" alt="BMW Logo" width={50} height={50} />
@@ -83,15 +83,15 @@ export default function Header() {
         <Link
           key={"simulate-installment"}
           href={"#simulate-installment"}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg flex items-center gap-2 ml-auto text-sm"
+          className="hidden md:flex bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg items-center gap-2 text-sm"
         >
           Simulate Installment
-          <FaArrowRight className=" transform -rotate-45" />
+          <FaArrowRight className="transform -rotate-45" />
         </Link>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white text-2xl transition-colors hover:text-gray-300"
+          className="md:hidden text-gray-800 text-2xl transition-colors hover:text-gray-600"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}

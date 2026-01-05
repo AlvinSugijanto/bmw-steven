@@ -16,13 +16,13 @@ export default function Home() {
       <HeroMain />
 
       {/* Car Configurator Section */}
-      <div className="pt-[72px]">
-        <Model />
-        <RequestDemo />
-        <InstallmentCTA />
-        <ContactUs />
-        <Footer />
-      </div>
+      {/* <div className="pt-[72px]"> */}
+      <Model />
+      <RequestDemo />
+      <InstallmentCTA />
+      <ContactUs />
+      <Footer />
+      {/* </div> */}
       {/* <Services />
       <Vehicles />
       <Testimonials /> */}

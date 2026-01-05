@@ -16,7 +16,7 @@ export default function HeroMain() {
           priority
         />
         {/* Dark Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Content */}
@@ -32,9 +32,10 @@ export default function HeroMain() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
               The Ultimate
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              <span className="">Driving Experience</span>
+              {/* <span className="text-transparent bg-clip-text bg-blue-400">
                 Driving Experience
-              </span>
+              </span> */}
             </h1>
 
             {/* Subheading */}
