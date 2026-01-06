@@ -21,7 +21,7 @@ export default function Home() {
       <RequestDemo />
       <InstallmentCTA />
       <ContactUs />
-      <Footer />
+      {/* <Footer /> */}
       {/* </div> */}
       {/* <Services />
       <Vehicles />

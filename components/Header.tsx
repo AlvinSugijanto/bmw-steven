@@ -15,7 +15,7 @@ import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/#home", hasDropdown: false },
-  { name: "Models", href: "/#models" },
+  { name: "Models", href: "/model" },
   { name: "Test Drive", href: "/#request-demo", hasDropdown: false },
 
   { name: "Contact Us", href: "/#contact-us" },
@@ -70,12 +70,14 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative flex items-center gap-1 text-gray-800 hover:text-gray-300 font-normal transition-colors group"
+                className="relative flex items-center gap-1 text-gray-800 hover:text-blue-600 font-normal transition-colors group"
               >
                 {link.name}
                 {link.hasDropdown && (
                   <FaChevronDown className="text-xs opacity-70" />
                 )}
+                {/* Underline effect */}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             );
           })}

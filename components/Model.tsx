@@ -26,7 +26,7 @@ function CarouselSection() {
   // Array of carousel images with text content
   const carouselImages = [
     {
-      src: "/2.avif",
+      src: "/car-list/bmw-i7.avif",
       alt: "THE i7 M70",
       title: "THE i7 M70",
       description: "The most powerful electric BMW M automobile",
@@ -38,15 +38,15 @@ function CarouselSection() {
       },
     },
     {
-      src: "/3.webp",
-      alt: "THE i5 M60",
-      title: "THE i5 M60",
+      src: "/car-list/bmw-m2.avif",
+      alt: "THE M2",
+      title: "THE M2",
       description: "The most powerful electric BMW M automobile",
       showText: true,
       position: {
-        title: { x: 0, y: 20 },
-        description: { x: 0, y: 30 },
-        button: { x: 0, y: 80 },
+        title: { x: 0, y: 25 },
+        description: { x: 0, y: 35 },
+        button: { x: 0, y: 45 },
       },
     },
   ];
@@ -61,7 +61,7 @@ function CarouselSection() {
         transition={{ duration: 0.8 }}
         className="text-center mb-8"
       >
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
           Discover Our Models
         </h2>
       </motion.div>
@@ -94,7 +94,7 @@ function CarouselSection() {
                 />
 
                 {/* Dark Overlay for better text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent z-10" />
 
                 {/* Text Overlay */}
                 {image.showText && (
