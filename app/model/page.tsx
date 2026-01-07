@@ -74,17 +74,17 @@ export default function ModelPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+      <section className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/car-list/bmw-i7.avif"
+            src="/our-models.jpg"
             alt="BMW Models"
             fill
-            className="object-cover"
+            className="object-cover [object-position:50%_60%]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
         </div>
 
         {/* Hero Content */}

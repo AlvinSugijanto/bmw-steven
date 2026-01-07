@@ -13,8 +13,26 @@ export default function RequestDemo() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Demo request:", formData);
-    alert("Thank you! We'll contact you soon to schedule your demo.");
+
+    // Build WhatsApp message
+    const phoneNumber = "6285156180598"; // Ganti dengan nomor WA yang sesuai
+    let message = "Halo, saya ingin request test drive BMW.%0A%0A";
+
+    if (formData.name) {
+      message += `Nama: ${formData.name}%0A`;
+    }
+    if (formData.email) {
+      message += `Email: ${formData.email}%0A`;
+    }
+    if (formData.phone) {
+      message += `No. HP: ${formData.phone}%0A`;
+    }
+
+    message +=
+      "%0AMohon informasi lebih lanjut mengenai:%0A- Jadwal test drive yang tersedia%0A- Lokasi test drive%0A- Promo dan penawaran terbaru%0A%0ATerima kasih!";
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -121,28 +139,25 @@ export default function RequestDemo() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder="Your Name (Optional)"
                   value={formData.name}
                   onChange={handleChange}
-                  required
                   className={inputClass}
                 />
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Email (Optional)"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                   className={inputClass}
                 />
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone"
+                  placeholder="Phone (Optional)"
                   value={formData.phone}
                   onChange={handleChange}
-                  required
                   className={inputClass}
                 />
               </div>

@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 
 export default function Model() {
   return (
-    <section id="home" className="bg-white overflow-hidden">
+    <section className="bg-white overflow-hidden">
       {/* Carousel Section - Total */}
       <CarouselSection />
     </section>

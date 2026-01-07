@@ -5,7 +5,7 @@ export const carListNew = [
     path: "/all-car-new-png/ix.webp",
     type: "electric",
     tag: "suv",
-    title: "Expressive and electric. Trailblazing a new age",
+    title: "Expressive and electric. Trailblazing a new age.",
     description:
       "The new BMW iX confidently takes the lead. It provides total flexibility on longer journeys too with a pure electric range of up to 602 km.¹ The clear lines and modernity of the new exterior lend the vehicle a unique design vocabulary, and the spaciousness, comfort and exclusiveness of the interior are just as inspiring. The driver assistance systems are only noticeable by making every journey simpler, safer and more pleasant. Discover all the model variants of the new BMW iX, its equipment options and technical data, plus numerous leasing and financing options.",
     content: {
@@ -14,7 +14,7 @@ export const carListNew = [
       vmax: "200 km/h",
       range: "490 - 602 km",
     },
-    heroImage: "/car-list/ix.webp",
+    // heroImage: "/car-list/ix.webp",
   },
   {
     name: "BMW iX3",
@@ -30,7 +30,7 @@ export const carListNew = [
       vmax: "210 km/h",
       range: "490 - 602 km",
     },
-    heroImage: "/car-list/ix3.webp",
+    // heroImage: "/car-list/ix3.webp",
   },
   {
     name: "BMW iX1",
@@ -38,7 +38,7 @@ export const carListNew = [
     path: "/all-car-new-png/ix1-suv.webp",
     type: "electric",
     tag: "suv",
-    title: "Driving pleasure",
+    title: "Driving Pleasure.",
     description:
       "For your everyday commute or weekend away – the BMW iX1 is your fully electric companion for every kind of adventure. And visually unmistakable from every angle. Enjoy spaciousness and comfort on every seat. Discover all the model variants of the BMW iX1, its equipment options and technical data, plus numerous leasing and financing options.",
     content: {
@@ -47,7 +47,7 @@ export const carListNew = [
       vmax: "170 km/h",
       range: "417 - 439 km",
     },
-    heroImage: "/car-list/ix1.webp",
+    // heroImage: "/car-list/ix1.webp",
   },
   {
     name: "BMW i7 Sedan",
@@ -55,7 +55,7 @@ export const carListNew = [
     path: "/all-car-new-png/i7-sedan.webp",
     type: "electric",
     tag: "sedan",
-    title: "Driving pleasure",
+    title: "Driving Pleasure.",
     description:
       "The BMW i7 Sedan takes the lead in every regard, from technology and design to comfort and a confident presence on the road. All without local emissions, thanks to its innovative, fully electric drive system that generates nothing but pure driving pleasure, whether you are behind the wheel or in the rear. Discover all the model variants of the BMW i7 Sedan, its equipment options and technical data, plus numerous leasing and financing options.",
     // content: {
@@ -64,7 +64,7 @@ export const carListNew = [
     //   vmax: "200 km/h",
     //   range: "490 - 602 km",
     // },
-    heroImage: "/car-list/i7-sedan.webp",
+    // heroImage: "/car-list/i7-sedan.webp",
   },
   {
     name: "BMW i5 Sedan",
@@ -81,6 +81,7 @@ export const carListNew = [
       vmax: "193 km/h",
       range: "up to 582 km",
     },
+    heroImage: "/car-list/i5-sedan.png",
   },
   {
     name: "BMW i5 Touring",
@@ -103,7 +104,7 @@ export const carListNew = [
     path: "/all-car-new-png/i4-suv.webp",
     type: "electric",
     tag: "suv",
-    title: "Driving pleasure",
+    title: "Driving Pleasure.",
     description: `You will hit the road with a sporty look and 100% battery power in the BMW i4 Gran Coupé. Leave a lasting impression, not emissions. The redesigned front accentuates the athletic nature of the vehicle. Elegant rear lights provide pleasing aesthetics at the rear. A contemporary atmosphere is conveyed by the new steering wheel design and waterfall ambient lighting in the interior. Discover all the model variants of the BMW 4 Series Gran Coupé, its equipment options and technical data, plus numerous leasing and financing options.`,
     content: {
       power: "210 kW (286 hp)",
@@ -136,7 +137,7 @@ export const carListNew = [
     tag: "suv",
     description:
       "Discover all the model variants of the BMW X7, its equipment options and technical data, plus numerous leasing and financing options.",
-    title: "Driving pleasure",
+    title: "Driving Pleasure.",
     content: {
       power: "280 kW (381 hp)",
       "0-100 km/h": "5.8s",
@@ -149,7 +150,7 @@ export const carListNew = [
     path: "/all-car-new-png/x6-suv.webp",
     type: "petrol",
     tag: "suv",
-    title: "Driving pleasure.",
+    title: "Driving Pleasure.",
     description:
       "A powerful presence. The BMW X6 enthrals with its distinctive design, coupé-styled profile and technical sophistication. Its contoured front boasting an illuminated kidney grille, its flowing roof line and cleanly drawn rear form a silhouette simply brimming with character. Behind this expressive appearance lies dynamic BMW performance: with powerful engines, adaptive suspension and intelligent all-wheel drive.",
     content: {

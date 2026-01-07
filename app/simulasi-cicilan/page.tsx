@@ -58,7 +58,7 @@ export default function SimulasiCicilan() {
   return (
     <div className="min-h-screen bg-white pt-[72px] font-sans">
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-12 pt-24">
+      <div className="container mx-auto px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,15 +97,16 @@ export default function SimulasiCicilan() {
                   Car Price
                 </label>
                 <input
-                  type="number"
-                  value={carPrice}
-                  onChange={(e) => setCarPrice(Number(e.target.value))}
+                  type="text"
+                  value={formatCurrency(carPrice)}
+                  onChange={(e) => {
+                    // Remove all non-numeric characters
+                    const numericValue = e.target.value.replace(/[^0-9]/g, "");
+                    setCarPrice(Number(numericValue) || 0);
+                  }}
                   className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  step="10000000"
+                  placeholder="Rp 0"
                 />
-                <p className="text-gray-600 text-sm mt-2">
-                  {formatCurrency(carPrice)}
-                </p>
               </div>
 
               {/* Down Payment */}

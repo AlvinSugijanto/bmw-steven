@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HeroMain() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden" id="home">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

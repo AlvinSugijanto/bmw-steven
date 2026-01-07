@@ -48,8 +48,89 @@ export default function CarDetailPage() {
       : carListNew[0];
 
   return (
-    <main className="min-h-screen pt-[72px] bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <main className="min-h-screen pt-[65px] bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section with Car Image */}
+      <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src={car.path}
+            alt={car.name}
+            fill
+            className="object-contain"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-800/10 via-gray-800/0 to-transparent" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 h-full flex flex-col mt-16 items-center">
+          {/* Bottom Car Name and Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl text-gray-800 mb-4 tracking-tight drop-shadow-2xl font-mono font-normal">
+              {car.name}
+            </h1>
+
+            {/* Action Buttons */}
+          </motion.div>
+        </div>
+      </section>
+      <section className="flex justify-between max-w-5xl mx-auto px-4">
+        <motion.button
+          whileHover={{ scale: 1.0 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg flex items-center gap-2 w-full justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Download Spec Card
+        </motion.button>
+
+        <motion.button
+          whileHover={{ scale: 1.0 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => {
+            const phoneNumber = "6285156180598"; // Ganti dengan nomor WA yang sesuai
+            const message = `Halo, saya tertarik untuk request test drive untuk *${car.name}*.%0A%0ASaya ingin mendapatkan informasi lebih lanjut mengenai:%0A- Jadwal test drive yang tersedia%0A- Lokasi test drive%0A- Promo dan penawaran terbaru%0A%0ATerima kasih!`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, "_blank");
+          }}
+          className="bg-white text-blue-600 px-6 py-3 font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg border-2 border-blue-600 flex items-center gap-2 w-full justify-center cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+          Request Test Drive
+        </motion.button>
+      </section>
       {/* Title Section */}
       {car.title && (
         <section className="px-4 py-16 flex flex-col gap-12 font-sans">
@@ -180,9 +261,11 @@ export default function CarDetailPage() {
                     fill
                     className="object-contain p-4 group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-sm text-white/80 mb-1">Previous</p>
+                    <p className="text-sm text-blue-500 mb-1 font-semibold">
+                      &lt;&lt; Previous
+                    </p>
                     <p className="text-xl font-bold text-white">
                       {previousCar.name}
                     </p>
@@ -195,16 +278,18 @@ export default function CarDetailPage() {
                 href={`/model/${nextCar.series}`}
                 className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200"
               >
-                <div className="relative h-48">
+                <div className="relative h-48 font-mono">
                   <Image
                     src={nextCar.path}
                     alt={nextCar.name}
                     fill
                     className="object-contain p-4 group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-sm text-white/80 mb-1">Next</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 right-4">
+                    <p className="text-sm text-blue-500 mb-1 font-semibold text-right">
+                      Next &gt;&gt;
+                    </p>
                     <p className="text-xl font-bold text-white">
                       {nextCar.name}
                     </p>

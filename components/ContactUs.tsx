@@ -19,8 +19,28 @@ export default function ContactUs() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+
+    // Build WhatsApp message
+    const phoneNumber = "6285156180598"; // Ganti dengan nomor WA yang sesuai
+    let message = "Halo, saya ingin menghubungi BMW Tunas.%0A%0A";
+
+    if (formData.name) {
+      message += `Nama: ${formData.name}%0A`;
+    }
+    if (formData.email) {
+      message += `Email: ${formData.email}%0A`;
+    }
+    if (formData.phone) {
+      message += `No. HP: ${formData.phone}%0A`;
+    }
+    if (formData.message) {
+      message += `%0APesan:%0A${formData.message}%0A`;
+    }
+
+    message += "%0ATerima kasih!";
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   const handleChange = (
@@ -135,7 +155,7 @@ export default function ContactUs() {
                     htmlFor="name"
                     className="block text-gray-700 font-semibold mb-2"
                   >
-                    Full Name
+                    Full Name (Optional)
                   </label>
                   <input
                     type="text"
@@ -145,7 +165,6 @@ export default function ContactUs() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="John Doe"
-                    required
                   />
                 </div>
 
@@ -154,7 +173,7 @@ export default function ContactUs() {
                     htmlFor="email"
                     className="block text-gray-700 font-semibold mb-2"
                   >
-                    Email Address
+                    Email Address (Optional)
                   </label>
                   <input
                     type="email"
@@ -164,7 +183,6 @@ export default function ContactUs() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="john@example.com"
-                    required
                   />
                 </div>
 
@@ -173,7 +191,7 @@ export default function ContactUs() {
                     htmlFor="phone"
                     className="block text-gray-700 font-semibold mb-2"
                   >
-                    Phone Number
+                    Phone Number (Optional)
                   </label>
                   <input
                     type="tel"
@@ -183,7 +201,6 @@ export default function ContactUs() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="+62 812 3456 7890"
-                    required
                   />
                 </div>
 
@@ -192,7 +209,7 @@ export default function ContactUs() {
                     htmlFor="message"
                     className="block text-gray-700 font-semibold mb-2"
                   >
-                    Message
+                    Message (Optional)
                   </label>
                   <textarea
                     id="message"
@@ -202,7 +219,6 @@ export default function ContactUs() {
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                     placeholder="Tell us how we can help you..."
-                    required
                   />
                 </div>
 
