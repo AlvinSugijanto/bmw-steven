@@ -21,7 +21,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     // Build WhatsApp message
-    const phoneNumber = "625117576041"; // Ganti dengan nomor WA yang sesuai
+    const phoneNumber = "6285117576041"; // Ganti dengan nomor WA yang sesuai
     let message = "Halo, saya ingin menghubungi BMW Tunas.%0A%0A";
 
     if (formData.name) {
@@ -100,9 +100,9 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600">+62 21 1234 5678</p>
+                    <p className="text-gray-600">+6285117576041</p>
                     <p className="text-gray-600">
-                      Mon - Sat: 9:00 AM - 6:00 PM
+                      Mon - Sun: 8:30 AM - 7:00 PM
                     </p>
                   </div>
                 </div>
@@ -113,8 +113,10 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">info@bmwtunas.co.id</p>
-                    <p className="text-gray-600">sales@bmwtunas.co.id</p>
+                    <p className="text-gray-600">
+                      steven.putra@bmw-tunas.co.id
+                    </p>
+                    <p className="text-gray-600">stevenbmwtunas@gmail.com</p>
                   </div>
                 </div>
 
@@ -127,11 +129,11 @@ export default function ContactUs() {
                       Location
                     </h4>
                     <p className="text-gray-600">
-                      Jl. Gatot Subroto Kav. 53
+                      Jalan Hayam Wuruk No. 51, Maphar, Taman Sari
                       <br />
-                      Jakarta Selatan 12950
+                      Jakarta Barat
                       <br />
-                      Indonesia
+                      DKI Jakarta
                     </p>
                   </div>
                 </div>

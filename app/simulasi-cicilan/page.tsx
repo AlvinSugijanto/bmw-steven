@@ -42,7 +42,7 @@ Down Payment: Rp ${formatCurrency(downPayment)}
 Mohon informasi lebih lanjut. Terima kasih!`;
 
     // WhatsApp number (replace with actual number)
-    const phoneNumber = "6281234567890"; // Replace with your WhatsApp number
+    const phoneNumber = "6285117576041"; // Replace with your WhatsApp number
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;

@@ -174,7 +174,7 @@ function CarouselSection() {
                         </motion.p>
 
                         {/* Button */}
-                        <Link href={`/model/${image.href}`}>
+                        <Link href={`${image.href}`}>
                           <motion.div
                             className="absolute sm:mt-0 mt-8"
                             style={{

@@ -90,7 +90,7 @@ export default function CarDetailClient({
           whileHover={{ scale: 1.0 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => {
-            const phoneNumber = "625117576041"; // Ganti dengan nomor WA yang sesuai
+            const phoneNumber = "6285117576041"; // Ganti dengan nomor WA yang sesuai
             const message = `Halo, saya tertarik untuk request test drive untuk *${car.name}*.%0A%0ASaya ingin mendapatkan informasi lebih lanjut mengenai:%0A- Jadwal test drive yang tersedia%0A- Lokasi test drive%0A- Promo dan penawaran terbaru%0A%0ATerima kasih!`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappUrl, "_blank");

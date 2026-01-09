@@ -143,10 +143,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:info@bmw.co.id"
+                  href="mailto:steven.putra@bmw-tunas.co.id"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  info@bmw.co.id
+                  steven.putra@bmw-tunas.co.id
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -167,7 +167,7 @@ export default function Footer() {
                   href="tel:+622150001234"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  +62 21 5000 1234
+                  +62 81 2345 67890
                 </a>
               </li>
             </ul>
