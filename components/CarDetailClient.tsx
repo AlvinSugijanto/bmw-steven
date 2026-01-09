@@ -31,7 +31,7 @@ export default function CarDetailClient({
   nextCar,
 }: CarDetailClientProps) {
   return (
-    <main className="min-h-screen pt-[65px] bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <main className="min-h-screen pt-[50px] md:pt-[65px] bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section with Car Image */}
       <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         {/* Background Image */}
@@ -55,7 +55,7 @@ export default function CarDetailClient({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl text-gray-800 mb-4 tracking-tight drop-shadow-2xl font-mono font-normal">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-800 mb-4 text-center tracking-tight drop-shadow-2xl font-mono font-normal">
               {car.name}
             </h1>
 
@@ -63,7 +63,7 @@ export default function CarDetailClient({
           </motion.div>
         </div>
       </section>
-      <section className="flex justify-between max-w-5xl mx-auto px-4">
+      <section className="flex flex-col sm:flex-row justify-between max-w-5xl mx-auto px-4 sm:gap-0 gap-4">
         <motion.button
           whileHover={{ scale: 1.0 }}
           whileTap={{ scale: 0.95 }}

@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <section className="text-white sm:pt-16 md:pt-20 pt-8 pb-10 bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-6">
@@ -164,10 +164,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+622150001234"
+                  href="tel:+6285117576041"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  +62 81 2345 67890
+                  +62 85 1175 76041
                 </a>
               </li>
             </ul>
