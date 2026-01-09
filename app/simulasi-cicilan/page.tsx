@@ -2,256 +2,166 @@
 
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { FaMoneyBillWave, FaCar } from "react-icons/fa";
-import Link from "next/link";
+import { FaMoneyBillWave, FaWhatsapp } from "react-icons/fa";
+import { carListNew } from "@/lib/carListNew";
 
 export default function SimulasiCicilan() {
-  const [carPrice, setCarPrice] = useState(2000000000); // Default: Rp 2 Miliar
-  const [downPaymentPercent, setDownPaymentPercent] = useState(20); // Default: 20%
-  const [loanTerm, setLoanTerm] = useState(36); // Default: 36 bulan
-  const [interestRate, setInterestRate] = useState(3.5); // Default: 3.5% per tahun
+  const [selectedSeries, setSelectedSeries] = useState("");
+  const [tenor, setTenor] = useState(36); // Default: 36 months
+  const [downPayment, setDownPayment] = useState("");
 
-  // Calculate values
-  const downPayment = useMemo(
-    () => (carPrice * downPaymentPercent) / 100,
-    [carPrice, downPaymentPercent]
-  );
+  // Get unique series from carList
+  const seriesOptions = useMemo(() => {
+    const uniqueSeries = Array.from(
+      new Set(carListNew.map((car) => car.series))
+    ).filter((series) => series);
+    return uniqueSeries;
+  }, []);
 
-  const loanAmount = useMemo(
-    () => carPrice - downPayment,
-    [carPrice, downPayment]
-  );
+  const formatCurrency = (value: string) => {
+    const numericValue = value.replace(/[^0-9]/g, "");
+    if (!numericValue) return "";
+    return new Intl.NumberFormat("id-ID").format(Number(numericValue));
+  };
 
-  const monthlyInterestRate = useMemo(
-    () => interestRate / 12 / 100,
-    [interestRate]
-  );
+  const handleDownPaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^0-9]/g, "");
+    setDownPayment(value);
+  };
 
-  const monthlyPayment = useMemo(() => {
-    if (monthlyInterestRate === 0) return loanAmount / loanTerm;
-    return (
-      (loanAmount *
-        monthlyInterestRate *
-        Math.pow(1 + monthlyInterestRate, loanTerm)) /
-      (Math.pow(1 + monthlyInterestRate, loanTerm) - 1)
-    );
-  }, [loanAmount, monthlyInterestRate, loanTerm]);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  const totalPayment = useMemo(
-    () => monthlyPayment * loanTerm,
-    [monthlyPayment, loanTerm]
-  );
+    // Create WhatsApp message
+    const message = `Halo, saya ingin simulasi cicilan BMW dengan detail berikut:
+    
+Series: ${selectedSeries.toUpperCase()}
+Tenor: ${tenor} bulan (${Math.floor(tenor / 12)} tahun)
+Down Payment: Rp ${formatCurrency(downPayment)}
 
-  const totalInterest = useMemo(
-    () => totalPayment - loanAmount,
-    [totalPayment, loanAmount]
-  );
+Mohon informasi lebih lanjut. Terima kasih!`;
 
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(value);
+    // WhatsApp number (replace with actual number)
+    const phoneNumber = "6281234567890"; // Replace with your WhatsApp number
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <div className="min-h-screen bg-white pt-[72px] font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-[72px] font-sans">
       {/* Main Content */}
       <div className="container mx-auto px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-6xl mx-auto"
+          className="max-w-2xl mx-auto"
         >
           {/* Page Title */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Installment Simulation{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
                 BMW
               </span>
             </h1>
             <p className="text-gray-600 text-lg">
-              Calculate your monthly installment for your dream BMW
+              Fill in the form and we'll contact you via WhatsApp
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left Column - Calculator Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="border border-gray-200 rounded-2xl p-8 bg-gray-50"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                <FaMoneyBillWave className="text-blue-400" />
-                Financing Details
-              </h2>
-
-              {/* Car Price */}
-              <div className="mb-6">
+          {/* Form Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-xl"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Series Dropdown */}
+              <div>
                 <label className="block text-gray-700 font-semibold mb-3">
-                  Car Price
+                  BMW Series <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  value={formatCurrency(carPrice)}
-                  onChange={(e) => {
-                    // Remove all non-numeric characters
-                    const numericValue = e.target.value.replace(/[^0-9]/g, "");
-                    setCarPrice(Number(numericValue) || 0);
-                  }}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Rp 0"
-                />
-              </div>
-
-              {/* Down Payment */}
-              <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-3">
-                  Down Payment (DP): {downPaymentPercent}%
-                </label>
-                <input
-                  type="range"
-                  min="10"
-                  max="50"
-                  value={downPaymentPercent}
-                  onChange={(e) =>
-                    setDownPaymentPercent(Number(e.target.value))
-                  }
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
-                />
-                <div className="flex justify-between text-gray-600 text-sm mt-2">
-                  <span>10%</span>
-                  <span className="font-semibold text-blue-400">
-                    {formatCurrency(downPayment)}
-                  </span>
-                  <span>50%</span>
-                </div>
-              </div>
-
-              {/* Loan Term */}
-              <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-3">
-                  Installment Term
-                </label>
-                <div className="grid grid-cols-5 gap-2">
-                  {[12, 24, 36, 48, 60].map((term) => (
-                    <button
-                      key={term}
-                      onClick={() => setLoanTerm(term)}
-                      className={`py-3 rounded-lg font-semibold transition-all ${
-                        loanTerm === term
-                          ? "bg-blue-600 text-white"
-                          : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-                      }`}
-                    >
-                      {term}
-                    </button>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm mt-2">
-                  {loanTerm} months ({Math.floor(loanTerm / 12)} years)
-                </p>
-              </div>
-
-              {/* Interest Rate */}
-              <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-3">
-                  Interest Rate (% per year)
-                </label>
-                <input
-                  type="number"
-                  value={interestRate}
-                  onChange={(e) => setInterestRate(Number(e.target.value))}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  step="0.1"
-                  min="0"
-                  max="20"
-                />
-                <p className="text-gray-600 text-sm mt-2">
-                  Interest per month: {(interestRate / 12).toFixed(3)}%
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Results */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-6"
-            >
-              {/* Monthly Payment - Highlighted */}
-              <div className="bg-blue-600 rounded-2xl p-8">
-                <p className="text-blue-100 text-sm font-semibold mb-2 uppercase tracking-wide">
-                  Monthly Installment
-                </p>
-                <p className="text-5xl font-bold text-white mb-2">
-                  {formatCurrency(monthlyPayment)}
-                </p>
-                <p className="text-blue-100 text-sm">For {loanTerm} months</p>
-              </div>
-
-              {/* Other Details */}
-              <div className="border border-gray-200 rounded-2xl p-6 space-y-4 bg-white">
-                <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                  <span className="text-gray-600">Car Price</span>
-                  <span className="text-gray-900 font-semibold">
-                    {formatCurrency(carPrice)}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                  <span className="text-gray-600">Down Payment (DP)</span>
-                  <span className="text-gray-900 font-semibold">
-                    {formatCurrency(downPayment)}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                  <span className="text-gray-600">Loan Amount</span>
-                  <span className="text-gray-900 font-semibold">
-                    {formatCurrency(loanAmount)}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                  <span className="text-gray-600">Total Interest</span>
-                  <span className="text-orange-400 font-semibold">
-                    {formatCurrency(totalInterest)}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center pt-2">
-                  <span className="text-gray-700 font-bold">Total Payment</span>
-                  <span className="text-gray-900 font-bold text-xl">
-                    {formatCurrency(totalPayment)}
-                  </span>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="border border-gray-200 rounded-2xl p-6 bg-white">
-                <p className="text-gray-600 mb-4">
-                  Interested in this simulation? Contact us for more information
-                  and the best offers!
-                </p>
-                <Link
-                  href="/#request-demo"
-                  className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                <select
+                  value={selectedSeries}
+                  onChange={(e) => setSelectedSeries(e.target.value)}
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  required
                 >
-                  Request Test Drive
-                </Link>
+                  <option value="">Select Series</option>
+                  {seriesOptions.map((series) => (
+                    <option key={series} value={series}>
+                      BMW {series.toUpperCase()}
+                    </option>
+                  ))}
+                </select>
               </div>
-            </motion.div>
-          </div>
+
+              {/* Tenor Dropdown */}
+              <div>
+                <label className="block text-gray-700 font-semibold mb-3">
+                  Tenor (Months) <span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={tenor}
+                  onChange={(e) => setTenor(Number(e.target.value))}
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  required
+                >
+                  <option value={12}>12 months (1 year)</option>
+                  <option value={24}>24 months (2 years)</option>
+                  <option value={36}>36 months (3 years)</option>
+                  <option value={48}>48 months (4 years)</option>
+                  <option value={60}>60 months (5 years)</option>
+                </select>
+              </div>
+
+              {/* Down Payment Input */}
+              <div>
+                <label className="block text-gray-700 font-semibold mb-3">
+                  Down Payment (DP) <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">
+                    Rp
+                  </span>
+                  <input
+                    type="text"
+                    value={formatCurrency(downPayment)}
+                    onChange={handleDownPaymentChange}
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="0"
+                    required
+                  />
+                </div>
+                <p className="text-gray-500 text-sm mt-2">
+                  Enter your down payment amount in IDR
+                </p>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full hover:cursor-pointer bg-transparent border-2 border-blue-600 hover:bg-blue-600 text-blue-600 hover:text-white px-6 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg"
+                disabled={!selectedSeries || !downPayment}
+              >
+                <FaWhatsapp className="text-2xl" />
+                Ask Our Sales
+              </button>
+            </form>
+          </motion.div>
 
           {/* Disclaimer */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-12 text-center"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-8 text-center"
           >
             <p className="text-gray-600 text-sm">
               * This simulation is only an estimate. Actual installments may

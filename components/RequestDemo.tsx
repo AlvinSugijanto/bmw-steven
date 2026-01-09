@@ -15,7 +15,7 @@ export default function RequestDemo() {
     e.preventDefault();
 
     // Build WhatsApp message
-    const phoneNumber = "6285156180598"; // Ganti dengan nomor WA yang sesuai
+    const phoneNumber = "625117576041"; // Ganti dengan nomor WA yang sesuai
     let message = "Halo, saya ingin request test drive BMW.%0A%0A";
 
     if (formData.name) {
@@ -57,29 +57,6 @@ export default function RequestDemo() {
     "px-5 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all text-white placeholder-gray-300";
   const overlayClass = "";
 
-  // OPTION 2: Clean & Modern (requestdemo3.jpg) - CURRENTLY ACTIVE
-  // const bgImage = "/requestdemo3.jpg";
-  // const headingClass =
-  //   "text-5xl md:text-7xl font-bold text-black mb-6 leading-tight uppercase tracking-tight";
-  // const subheadingClass =
-  //   "text-lg md:text-xl text-gray-800 mb-8 leading-relaxed max-w-xl";
-  // const featuresClass = "mt-8 flex flex-wrap gap-6 text-sm text-gray-700";
-  // const inputClass =
-  //   "px-5 py-4 bg-white/90 backdrop-blur-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-black placeholder-gray-500";
-  // const overlayClass = ""; // No overlay needed for light background
-
-  // OPTION 3: Balanced & Sophisticated (requestdemo4.png)
-  // const bgImage = "/requestdemo4.png";
-  // const headingClass =
-  //   "text-5xl md:text-7xl font-bold text-white mb-6 leading-tight uppercase tracking-tight drop-shadow-lg";
-  // const subheadingClass =
-  //   "text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-xl drop-shadow-md";
-  // const featuresClass = "mt-8 flex flex-wrap gap-6 text-sm text-gray-200";
-  // const inputClass =
-  //   "px-5 py-4 bg-white/15 backdrop-blur-md border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all text-white placeholder-gray-200";
-  // const overlayClass =
-  //   "absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/40";
-
   return (
     <section id="request-demo" className="relative py-20">
       {/* Background Image */}
@@ -88,7 +65,7 @@ export default function RequestDemo() {
           src={bgImage}
           alt="BMW Electric Vehicle Demo"
           fill
-          className="object-cover md:object-bottom object-left"
+          className="object-cover md:object-bottom [object-position:80%_60%]"
           priority
         />
         {/* Overlay - changes per design option */}

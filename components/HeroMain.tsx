@@ -12,7 +12,7 @@ export default function HeroMain() {
           src="/hero.jpg"
           alt="BMW Hero"
           fill
-          className="object-cover"
+          className="object-cover sm:object-center object-[10%_60%]"
           priority
         />
         {/* Dark Overlay for better text readability */}
@@ -29,7 +29,7 @@ export default function HeroMain() {
             className="max-w-4xl mx-auto text-center text-white"
           >
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
               The Ultimate
               <br />
               <span className="">Driving Experience</span>
@@ -45,7 +45,7 @@ export default function HeroMain() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:px-0 px-16">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

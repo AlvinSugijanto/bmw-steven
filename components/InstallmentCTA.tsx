@@ -15,7 +15,7 @@ export default function InstallmentCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight"
           >
             Calculate Your{" "}
             {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"> */}
@@ -44,8 +44,8 @@ export default function InstallmentCTA() {
             className="grid md:grid-cols-3 gap-6 mb-10"
           >
             <div className="border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition-all">
-              <FaCalculator className="text-3xl text-blue-400 mb-3 mx-auto" />
-              <h3 className="text-white font-semibold mb-2">
+              <FaCalculator className="text-4xl text-blue-400 mb-6 mx-auto" />
+              <h3 className="text-gray-600 font-semibold mb-2">
                 Accurate Calculation
               </h3>
               <p className="text-gray-400 text-sm">
@@ -53,15 +53,19 @@ export default function InstallmentCTA() {
               </p>
             </div>
             <div className="border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition-all">
-              <FaChartLine className="text-3xl text-blue-400 mb-3 mx-auto" />
-              <h3 className="text-white font-semibold mb-2">Various Terms</h3>
+              <FaChartLine className="text-4xl text-blue-400 mb-6 mx-auto" />
+              <h3 className="text-gray-600 font-semibold mb-2">
+                Various Terms
+              </h3>
               <p className="text-gray-400 text-sm">
                 Choose terms from 12 to 60 months
               </p>
             </div>
             <div className="border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition-all">
-              <FaCheckCircle className="text-3xl text-blue-400 mb-3 mx-auto" />
-              <h3 className="text-white font-semibold mb-2">No Commitment</h3>
+              <FaCheckCircle className="text-4xl text-blue-400 mb-6 mx-auto" />
+              <h3 className="text-gray-600 font-semibold mb-2">
+                No Commitment
+              </h3>
               <p className="text-gray-400 text-sm">
                 Free simulation with no obligation
               </p>

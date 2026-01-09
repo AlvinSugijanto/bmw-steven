@@ -21,7 +21,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     // Build WhatsApp message
-    const phoneNumber = "6285156180598"; // Ganti dengan nomor WA yang sesuai
+    const phoneNumber = "625117576041"; // Ganti dengan nomor WA yang sesuai
     let message = "Halo, saya ingin menghubungi BMW Tunas.%0A%0A";
 
     if (formData.name) {

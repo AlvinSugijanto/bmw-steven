@@ -299,18 +299,18 @@ export default function ModelPage() {
                           </div>
 
                           {/* Hover Overlay with Button */}
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{
-                              opacity:
-                                hoveredCard === seriesIndex * 100 + index
-                                  ? 1
-                                  : 0,
-                            }}
-                            transition={{ duration: 0.3 }}
-                            className="absolute inset-0 bg-black/40 flex items-center justify-center z-20"
-                          >
-                            <Link href={`/model/${car.series}`}>
+                          <Link href={`/model/${car.series}`}>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{
+                                opacity:
+                                  hoveredCard === seriesIndex * 100 + index
+                                    ? 1
+                                    : 0,
+                              }}
+                              transition={{ duration: 0.3 }}
+                              className="absolute inset-0 bg-black/40 flex items-center justify-center z-20"
+                            >
                               <motion.button
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{
@@ -328,8 +328,8 @@ export default function ModelPage() {
                               >
                                 View Detail
                               </motion.button>
-                            </Link>
-                          </motion.div>
+                            </motion.div>
+                          </Link>
                         </div>
                       </motion.div>
                     ))}

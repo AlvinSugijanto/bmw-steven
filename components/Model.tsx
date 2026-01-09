@@ -11,6 +11,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 export default function Model() {
   return (
@@ -27,8 +28,8 @@ function CarouselSection() {
   const carouselImages = [
     {
       src: "/car-list/bmw-i7.avif",
-      alt: "THE i7 M70",
-      title: "THE i7 M70",
+      alt: "THE I7 M70",
+      title: "The I7 M70",
       description: "The most powerful electric BMW M automobile",
       showText: true,
       position: {
@@ -36,11 +37,38 @@ function CarouselSection() {
         description: { x: 0, y: 35 },
         button: { x: 0, y: 45 },
       },
+      href: "/model/i7-sedan",
+    },
+    {
+      src: "/car-list/m4-coupe.webp",
+      alt: "The M4 Coupé",
+      title: "The M4 Coupé",
+      description: "The most powerful electric BMW M automobile",
+      showText: true,
+      position: {
+        title: { x: 0, y: 25 },
+        description: { x: 0, y: 35 },
+        button: { x: 0, y: 45 },
+      },
+      href: "/model/m4-coupe",
+    },
+    {
+      src: "/car-list/bmw-3.avif",
+      alt: "The 3",
+      title: "The 3",
+      description: "Exclusive Design.",
+      showText: true,
+      position: {
+        title: { x: 0, y: 25 },
+        description: { x: 0, y: 35 },
+        button: { x: 0, y: 45 },
+      },
+      href: "/model/m3-touring",
     },
     {
       src: "/car-list/bmw-m2.avif",
       alt: "THE M2",
-      title: "THE M2",
+      title: "The M2",
       description: "The most powerful electric BMW M automobile",
       showText: true,
       position: {
@@ -48,11 +76,12 @@ function CarouselSection() {
         description: { x: 0, y: 35 },
         button: { x: 0, y: 45 },
       },
+      href: "/model/m2-coupe",
     },
   ];
 
   return (
-    <div className="w-full my-16">
+    <div className="w-full mt-16 mb-8">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -61,8 +90,8 @@ function CarouselSection() {
         transition={{ duration: 0.8 }}
         className="text-center mb-8"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-          Discover Our Models
+        <h2 className="text-3xl md:text-4xl font-mono font-semibold text-gray-700">
+          DISCOVER OUR MODEL
         </h2>
       </motion.div>
 
@@ -75,10 +104,24 @@ function CarouselSection() {
         className="relative w-full"
       >
         <Swiper
-          modules={[Navigation, Pagination]}
-          navigation
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation={{
+            enabled: true,
+          }}
           pagination={{ clickable: true }}
           loop={true}
+          breakpoints={{
+            0: {
+              navigation: {
+                enabled: false,
+              },
+            },
+            768: {
+              navigation: {
+                enabled: true,
+              },
+            },
+          }}
           className="h-[500px] md:h-[600px]"
         >
           {carouselImages.map((image, index) => (
@@ -120,7 +163,7 @@ function CarouselSection() {
 
                         {/* Description */}
                         <motion.p
-                          className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide max-w-2xl absolute"
+                          className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide max-w-2xl absolute sm:mt-0 mt-4"
                           style={{
                             left: `${image.position.description.x}%`,
                             top: `${image.position.description.y}%`,
@@ -131,18 +174,20 @@ function CarouselSection() {
                         </motion.p>
 
                         {/* Button */}
-                        <motion.div
-                          className="absolute"
-                          style={{
-                            left: `${image.position.button.x}%`,
-                            top: `${image.position.button.y}%`,
-                            transform: "translate(0, -50%)",
-                          }}
-                        >
-                          <button className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 font-semibold text-sm md:text-base transition-all rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 tracking-wide uppercase">
-                            Explore Now
-                          </button>
-                        </motion.div>
+                        <Link href={`/model/${image.href}`}>
+                          <motion.div
+                            className="absolute sm:mt-0 mt-8"
+                            style={{
+                              left: `${image.position.button.x}%`,
+                              top: `${image.position.button.y}%`,
+                              transform: "translate(0, -50%)",
+                            }}
+                          >
+                            <button className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 font-semibold text-sm md:text-base transition-all rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 tracking-wide uppercase">
+                              Explore Now
+                            </button>
+                          </motion.div>
+                        </Link>
                       </motion.div>
                     </div>
                   </div>
