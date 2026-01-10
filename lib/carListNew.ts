@@ -1,6 +1,6 @@
 export const carListNew = [
   {
-    name: "BMW iX",
+    name: "BMW iX SUV",
     series: "ix",
     path: "/all-car-new-png/ix.webp",
     type: "electric",
@@ -14,10 +14,11 @@ export const carListNew = [
       vmax: "200 km/h",
       range: "490 - 602 km",
     },
+    specCard: "/spec-card/bmw-ix.pdf",
     // heroImage: "/car-list/ix.webp",
   },
   {
-    name: "BMW iX3",
+    name: "BMW iX3 SUV",
     series: "ix3",
     path: "/all-car-new-png/ix3.webp",
     type: "electric",
@@ -33,7 +34,7 @@ export const carListNew = [
     // heroImage: "/car-list/ix3.webp",
   },
   {
-    name: "BMW iX1",
+    name: "BMW iX1 SUV",
     series: "ix1-suv",
     path: "/all-car-new-png/ix1-suv.webp",
     type: "electric",
@@ -47,6 +48,7 @@ export const carListNew = [
       vmax: "170 km/h",
       range: "417 - 439 km",
     },
+    specCard: "/spec-card/bmw-ix1.pdf",
     // heroImage: "/car-list/ix1.webp",
   },
   {
@@ -81,6 +83,7 @@ export const carListNew = [
       vmax: "193 km/h",
       range: "up to 582 km",
     },
+    specCard: "/spec-card/bmw-i5-sedan.pdf",
     heroImage: "/car-list/i5-sedan.png",
   },
   {
@@ -97,6 +100,7 @@ export const carListNew = [
       vmax: "193 km/h",
       range: "up to 560 km",
     },
+    specCard: "/spec-card/bmw-i5-touring.pdf",
   },
   {
     name: "BMW i4 SUV",
@@ -112,13 +116,14 @@ export const carListNew = [
       vmax: "190 km/h",
       range: "406 - 500 km",
     },
+    specCard: "/spec-card/bmw-i4-suv.pdf",
   },
   {
     name: "BMW XM SUV",
     series: "xm-suv",
     path: "/all-car-new-png/xm-suv.webp",
-    type: "electric",
-    tag: "hybrid",
+    type: "hybrid",
+    tag: "suv",
     title: "For those who want more",
     description:
       "An extrovert from the front to the rear. Powerful proportions and striking design elements. Top performance of up to 550 kW (738 hp)³. The BMW XM Label and BMW XM 50e set new benchmarks in the high-performance segment, combining the power typical of M models with advanced plug-in hybrid technology. Discover all the model variants of the new BMW XM, its equipment options and technical data, plus numerous leasing and financing options.",
@@ -143,6 +148,7 @@ export const carListNew = [
       "0-100 km/h": "5.8s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-x7-suv.pdf",
   },
   {
     name: "BMW X6 SUV",
@@ -159,6 +165,7 @@ export const carListNew = [
       "0-100 km/h": "5.4s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-x6-suv.pdf",
   },
   {
     name: "BMW X5 SUV",
@@ -174,6 +181,7 @@ export const carListNew = [
       "0-100 km/h": "5.4s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-x5-suv.pdf",
   },
   {
     name: "BMW X4 SUV",
@@ -189,6 +197,7 @@ export const carListNew = [
       "Fuel consumption combined in km/l": "8.3",
       "CO2 combined emissions in g/km": "180",
     },
+    specCard: "/spec-card/bmw-x4-suv.pdf",
   },
   {
     name: "BMW X3 SUV",
@@ -204,6 +213,7 @@ export const carListNew = [
       "0-100 km/h": "8.5s",
       vmax: "215 km/h",
     },
+    specCard: "/spec-card/bmw-x3-suv.pdf",
   },
   {
     name: "BMW X1 SUV",
@@ -219,6 +229,7 @@ export const carListNew = [
       "0-100 km/h": "9s",
       vmax: "215 km/h",
     },
+    specCard: "/spec-card/bmw-x1-suv.pdf",
   },
   {
     name: "BMW 7 Sedan",
@@ -234,6 +245,7 @@ export const carListNew = [
       "0-100 km/h": "6.7s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-7-sedan.pdf",
   },
   {
     name: "BMW 5 Sedan",
@@ -250,6 +262,7 @@ export const carListNew = [
       torque: "310 Nm",
       vmax: "193 km/h",
     },
+    specCard: "/spec-card/bmw-5-sedan.pdf",
   },
   {
     name: "BMW M4 Coupe",
@@ -266,6 +279,7 @@ export const carListNew = [
       "0-100 km/h": "3.4s",
       vmax: "302 km/h",
     },
+    specCard: "/spec-card/bmw-m4-coupe.pdf",
   },
   {
     name: "BMW 4 Gran Coupe",
@@ -282,6 +296,7 @@ export const carListNew = [
       "0-100 km/h": "5.9s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-4-gran-coupe.pdf",
   },
   {
     name: "BMW 4 Convertible",
@@ -298,6 +313,7 @@ export const carListNew = [
       "0-100 km/h": "6.4s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-4-convertible.pdf",
   },
   {
     name: "BMW M4 Convertible",
@@ -330,6 +346,7 @@ export const carListNew = [
       "0-100 km/h": "7.4s",
       vmax: "235 km/h",
     },
+    specCard: "/spec-card/bmw-3-sedan.pdf",
   },
   {
     name: "BMW M3 Sedan",
@@ -346,6 +363,7 @@ export const carListNew = [
       "0-100 km/h": "3.5s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-m3-sedan.pdf",
   },
   {
     name: "BMW M3 Touring",
@@ -362,6 +380,7 @@ export const carListNew = [
       "0-100 km/h": "3.5s",
       vmax: "300 km/h",
     },
+    specCard: "/spec-card/bmw-m3-touring.pdf",
   },
   {
     name: "BMW 2 Coupe",
@@ -378,6 +397,7 @@ export const carListNew = [
       "0-100 km/h": "7.5s",
       vmax: "236 km/h",
     },
+    specCard: "/spec-card/bmw-2-coupe.pdf",
   },
   {
     name: "BMW M2 Coupe",
@@ -394,6 +414,7 @@ export const carListNew = [
       "0-100 km/h": "4.2s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-m2-coupe.pdf",
   },
   {
     name: "BMW 2 Gran Coupe",
@@ -409,6 +430,7 @@ export const carListNew = [
       "0-100 km/h": "8.4s",
       vmax: "226 km/h",
     },
+    specCard: "/spec-card/bmw-2-gran-coupe.pdf",
   },
   {
     name: "BMW Z4 Roadster",
@@ -425,6 +447,7 @@ export const carListNew = [
       "0-100 km/h": "5.4s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-z4-roadster.pdf",
   },
   {
     name: "BMW Z4 Roadster 2",
@@ -441,5 +464,6 @@ export const carListNew = [
       "0-100 km/h": "4.6s",
       vmax: "250 km/h",
     },
+    specCard: "/spec-card/bmw-z4-roadster-2.pdf",
   },
 ];

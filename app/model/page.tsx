@@ -26,6 +26,7 @@ export default function ModelPage() {
       (selectedSeries === "x" &&
         car.series.startsWith("x") &&
         !car.series.startsWith("xm")) ||
+      (selectedSeries === "xm" && car.series.startsWith("xm")) ||
       (selectedSeries === "sedan" && car.series.includes("sedan")) ||
       (selectedSeries === "coupe" && car.series.includes("coupe")) ||
       (selectedSeries === "convertible" &&
@@ -48,6 +49,7 @@ export default function ModelPage() {
     "X Series": filteredCarList.filter(
       (car) => car.series.startsWith("x") && !car.series.startsWith("xm")
     ),
+    "XM Series": filteredCarList.filter((car) => car.series.startsWith("xm")),
     "Sedan Series": filteredCarList.filter(
       (car) =>
         car.series.includes("sedan") &&
@@ -145,6 +147,7 @@ export default function ModelPage() {
                 <option value="i">i Series</option>
                 <option value="m">M Series</option>
                 <option value="x">X Series</option>
+                <option value="xm">XM Series</option>
                 <option value="sedan">Sedan</option>
                 <option value="coupe">Coupe</option>
                 <option value="convertible">Convertible</option>

@@ -12,6 +12,7 @@ interface CarDetailClientProps {
     title?: string;
     description?: string;
     content?: Record<string, string | undefined>;
+    specCard?: string;
   };
   previousCar: {
     name: string;
@@ -30,6 +31,18 @@ export default function CarDetailClient({
   previousCar,
   nextCar,
 }: CarDetailClientProps) {
+  // Download spec card function
+  const handleDownloadSpecCard = () => {
+    if (!car.specCard) return;
+
+    const link = document.createElement("a");
+    link.href = car.specCard;
+    link.download = car.specCard.split("/").pop() || "spec-card.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <main className="min-h-screen pt-[50px] md:pt-[65px] bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section with Car Image */}
@@ -43,49 +56,82 @@ export default function CarDetailClient({
             className="object-contain"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-800/10 via-gray-800/0 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-800/10 via-gray-800/10 to-transparent" />
           {/* <div className="absolute inset-10 bg-gradient-to-l from-gray-800/10 via-gray-800/0 to-transparent" /> */}
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col mt-14 items-center">
-          {/* Bottom Car Name and Buttons */}
+        <div className="relative z-10 h-full flex justify-center px-6 sm:px-12 md:px-16">
+          {/* Car Name Display - Positioned closer to car */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="max-w-xl mt-14 mr-24"
           >
-            <h1 className="capitalize text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-gray-800 mb-4 text-center tracking-tight drop-shadow-2xl font-mono font-normal">
-              {car.name}
+            {/* "THE" prefix */}
+            <p className="text-base sm:text-xl ml-1.5 tracking-[0.4em] text-gray-800 font-normal uppercase mb-2">
+              THE
+            </p>
+
+            {/* Car Name - Clean and Bold */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight mb-2 font-mono">
+              {car.name.replace("BMW ", "")}
             </h1>
 
-            {/* Action Buttons */}
+            {/* Subtle underline accent */}
+            <div className="w-20 h-1 bg-blue-600 rounded-full"></div>
           </motion.div>
+
+          {/* Action Buttons */}
         </div>
       </section>
       <section className="flex flex-col sm:flex-row justify-between max-w-5xl mx-auto px-4 sm:gap-0 gap-4">
-        <motion.button
-          whileHover={{ scale: 1.0 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg flex items-center gap-2 w-full justify-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        {car.specCard ? (
+          <motion.button
+            whileHover={{ scale: 1.0 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleDownloadSpecCard}
+            className="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg flex items-center gap-2 w-full justify-center cursor-pointer"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-            />
-          </svg>
-          Download Spec Card
-        </motion.button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Download Spec Card
+          </motion.button>
+        ) : (
+          <motion.button
+            disabled
+            className="bg-gray-400 text-white px-6 py-3 font-semibold transition-all duration-300 shadow-lg flex items-center gap-2 w-full justify-center cursor-not-allowed opacity-60"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Spec Card Not Available
+          </motion.button>
+        )}
 
         <motion.button
           whileHover={{ scale: 1.0 }}
