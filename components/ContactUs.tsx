@@ -22,7 +22,7 @@ export default function ContactUs() {
 
     // Build WhatsApp message
     const phoneNumber = "6285117576041"; // Ganti dengan nomor WA yang sesuai
-    let message = "Halo, saya ingin menghubungi BMW Tunas.%0A%0A";
+    let message = "Halo, saya ingin menghubungi BMW Tunas Hayam Wuruk.%0A%0A";
 
     if (formData.name) {
       message += `Nama: ${formData.name}%0A`;

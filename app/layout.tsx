@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BMW Tunas",
+  title: "BMW Tunas Hayam Wuruk",
   description: "Premium car rental services for your journey",
 };
 

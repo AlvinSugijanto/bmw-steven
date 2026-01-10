@@ -41,14 +41,16 @@ export async function generateMetadata({
     "premium vehicle",
     "test drive",
     "BMW Indonesia",
+    "BMW Tunas",
+    "BMW Hayam Wuruk",
   ].filter(Boolean);
 
   return {
-    title: `${car.name} - BMW Indonesia`,
+    title: `${car.name} - BMW Tunas Hayam Wuruk`,
     description: seoDescription,
     keywords: keywords.join(", "),
     openGraph: {
-      title: `${car.name} - ${car.title || "BMW Indonesia"}`,
+      title: `${car.name} - ${car.title || "BMW Tunas Hayam Wuruk"}`,
       description: seoDescription,
       images: [
         {
@@ -59,11 +61,11 @@ export async function generateMetadata({
         },
       ],
       type: "website",
-      siteName: "BMW Indonesia",
+      siteName: "BMW Tunas Hayam Wuruk",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${car.name} - BMW Indonesia`,
+      title: `${car.name} - BMW Tunas Hayam Wuruk`,
       description: seoDescription,
       images: [car.path],
     },
