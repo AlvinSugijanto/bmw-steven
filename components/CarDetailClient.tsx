@@ -44,10 +44,11 @@ export default function CarDetailClient({
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-800/10 via-gray-800/0 to-transparent" />
+          {/* <div className="absolute inset-10 bg-gradient-to-l from-gray-800/10 via-gray-800/0 to-transparent" /> */}
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col mt-16 items-center">
+        <div className="relative z-10 h-full flex flex-col mt-14 items-center">
           {/* Bottom Car Name and Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -55,7 +56,7 @@ export default function CarDetailClient({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-800 mb-4 text-center tracking-tight drop-shadow-2xl font-mono font-normal">
+            <h1 className="capitalize text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-gray-800 mb-4 text-center tracking-tight drop-shadow-2xl font-mono font-normal">
               {car.name}
             </h1>
 
@@ -116,7 +117,7 @@ export default function CarDetailClient({
       </section>
       {/* Title Section */}
       {car.title && (
-        <section className="px-4 py-16 flex flex-col gap-12 font-sans">
+        <section className="px-4 py-16 flex flex-col sm:gap-12 gap-8 font-sans">
           <div className="max-w-2xl mx-auto ">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

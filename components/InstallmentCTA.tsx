@@ -83,7 +83,7 @@ export default function InstallmentCTA() {
               href="/simulasi-cicilan"
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 uppercase tracking-wide"
             >
-              <FaCalculator className="text-xl" />
+              {/* <FaCalculator className="text-xl" /> */}
               Start Simulation Now
             </Link>
           </motion.div>
