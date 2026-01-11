@@ -26,19 +26,6 @@ function CarouselSection() {
   // Array of carousel images with text content
   const carouselImages = [
     {
-      src: "/car-list/bmw-i7.avif",
-      alt: "THE I7 M70",
-      title: "The I7 M70",
-      description: "The most powerful electric BMW M automobile",
-      showText: true,
-      position: {
-        title: { x: 0, y: 25 },
-        description: { x: 0, y: 35 },
-        button: { x: 0, y: 45 },
-      },
-      href: "/model/i7-sedan",
-    },
-    {
       src: "/car-list/m4-coupe.webp",
       alt: "The M4 Coupé",
       title: "The M4 Coupé",
@@ -51,6 +38,20 @@ function CarouselSection() {
       },
       href: "/model/m4-coupe",
     },
+    {
+      src: "/car-list/bmw-i7.avif",
+      alt: "THE I7 ",
+      title: "The I7 ",
+      description: "The most powerful electric BMW M automobile",
+      showText: true,
+      position: {
+        title: { x: 0, y: 25 },
+        description: { x: 0, y: 35 },
+        button: { x: 0, y: 45 },
+      },
+      href: "/model/i7-sedan",
+    },
+
     {
       src: "/car-list/bmw-3.avif",
       alt: "The 3",
@@ -80,7 +81,7 @@ function CarouselSection() {
   ];
 
   return (
-    <div className="w-full mt-16 mb-8">
+    <div className="w-full my-10">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -121,7 +122,7 @@ function CarouselSection() {
               },
             },
           }}
-          className="h-[500px] md:h-[600px]"
+          className="w-full aspect-[16/16] h-full sm:h-[600px]"
         >
           {carouselImages.map((image, index) => (
             <SwiperSlide key={index}>

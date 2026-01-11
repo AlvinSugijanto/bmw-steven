@@ -46,14 +46,14 @@ export default function CarDetailClient({
   return (
     <main className="min-h-screen pt-[50px] md:pt-[65px] bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section with Car Image */}
-      <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
+      <section className="relative h-[50vh] xs:h-[80vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src={car.path}
             alt={car.name}
             fill
-            className="object-contain"
+            className="object-contain xs:scale-100 scale-125"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-800/10 via-gray-800/10 to-transparent" />
@@ -67,7 +67,7 @@ export default function CarDetailClient({
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-xl mt-14 mr-24"
+            className="max-w-xl xs:mt-14 xs:mr-24 mt-8 mr-24"
           >
             {/* "THE" prefix */}
             <p className="text-base sm:text-xl ml-1.5 tracking-[0.4em] text-gray-800 font-normal uppercase mb-2">
